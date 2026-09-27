@@ -8,8 +8,12 @@
     --blue-bright:#4fc9ff;
     --blue-soft:#8fb4ff;
     --text:#f4f7ff;
-    --text-muted:#9aa6c9;
-    --text-faint:#7d87ac;
+    --text-muted:#dbe2f2;
+    --text-faint:#a8b3d1;
+    --text-strong:#ffffff;
+    --blue-end:#1f6feb;
+    --wa-a:#0e7f3f;
+    --wa-b:#138744;
     --glow:rgba(47,107,255,0.5);
     --radius:18px;
     --maxw:1180px;}
@@ -79,7 +83,7 @@ header .bar{display:flex;align-items:center;justify-content:space-between;paddin
 .section-head .eyebrow{margin-bottom:12px;}
 .section-head p{margin-top:12px;color:var(--text-muted);font-size:15.5px;}
 .services-grid{display:grid;grid-template-columns:1fr;gap:16px;}
-.service-card{position:relative;
+.service-card{position:relative;display:flex;flex-direction:column;align-items:flex-start;
     background:linear-gradient(155deg, var(--panel-2), var(--panel));
     border:1px solid var(--border);
     border-radius:var(--radius);
@@ -96,15 +100,25 @@ header .bar{display:flex;align-items:center;justify-content:space-between;paddin
     background:rgba(47,107,255,.14);border:1px solid var(--border-strong);
     display:flex;align-items:center;justify-content:center;margin-bottom:16px;}
 .service-icon svg{width:22px;height:22px;color:var(--blue-bright);}
-.service-card h3{font-size:18px;font-weight:700;margin-bottom:8px;}
-.service-card p{font-size:14.5px;color:var(--text-muted);margin-bottom:18px;}
+.service-card h3{font-size:18px;font-weight:800;color:var(--text-strong);margin-bottom:8px;}
+.service-card p{flex:1;font-size:14.5px;font-weight:500;color:var(--text-muted);margin-bottom:18px;}
 .service-card .tag{display:inline-block;font-family:"Sora";font-size:13px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;
     color:var(--blue-bright);background:rgba(47,107,255,.16);border:1px solid var(--border-strong);
     padding:5px 12px;border-radius:999px;margin-bottom:14px;}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    width:100%;min-height:52px;padding:14px 20px;border-radius:12px;
+    font-family:"Sora",system-ui,sans-serif;font-weight:700;font-size:15px;line-height:1.25;text-align:center;
+    background:linear-gradient(92deg,var(--blue),var(--blue-end));
+    color:#fff;border:none;cursor:pointer;
+    box-shadow:0 12px 26px -10px rgba(47,107,255,.65);
+    transition:filter .2s ease, transform .2s ease;}
+.btn svg{width:18px;height:18px;flex:none;}
+.service-card .btn{align-self:stretch;}
+@media (min-width:1020px){.service-card .btn{min-height:68px;}}
 .btn:hover{filter:brightness(1.08);transform:translateY(-1px);}
 .btn.btn-outline{background:transparent;border:1px solid var(--border-strong);color:var(--blue-soft);
     box-shadow:none;}
-.btn.btn-wa{background:linear-gradient(92deg,#1fb35a,#25d366);box-shadow:0 12px 26px -10px rgba(37,211,102,.55);}
+.btn.btn-wa{background:linear-gradient(92deg,var(--wa-a),var(--wa-b));color:#fff;box-shadow:0 12px 26px -10px rgba(19,135,68,.55);}
 .cert-card:hover{transform:translateY(-3px);border-color:var(--blue-bright);}
 .cert-card img{width:100%;display:block;}
 .cert-caption{margin-top:24px;}
@@ -144,6 +158,7 @@ header .bar{display:flex;align-items:center;justify-content:space-between;paddin
 .faq-a-inner{padding:0 20px 18px;color:var(--text-muted);font-size:14.5px;}
 footer{border-top:1px solid var(--border);padding:34px 0;}
 footer .brand{justify-content:center;}
+.footer-logo{width:203px;height:auto;}
 footer p{color:var(--text-faint);font-size:12.5px;max-width:420px;}
 footer .legal-links a{color:var(--blue-soft,#8fb4ff);text-decoration:underline;text-underline-offset:2px;}
 footer .legal-links a:hover{color:var(--blue-bright,#4fc9ff);}
@@ -160,10 +175,10 @@ header .brand{color:var(--text);text-decoration:none;}
     border:1px solid var(--border);
     border-radius:var(--radius);
     padding:26px 24px;}
-.dd-card h3{font-size:17px;font-weight:700;margin-bottom:16px;}
+.dd-card h3{font-size:18px;font-weight:800;color:var(--text-strong);margin-bottom:16px;}
 .dd-card.desejo{border-color:var(--border-strong);}
 .dd-list{list-style:none;padding:0;margin:0;display:grid;gap:12px;}
-.dd-list li{display:flex;gap:10px;align-items:flex-start;font-size:14.5px;color:var(--text-muted);}
+.dd-list li{display:flex;gap:10px;align-items:flex-start;font-size:14.5px;font-weight:500;color:var(--text-muted);}
 .dd-list svg{width:18px;height:18px;flex:none;margin-top:1px;}
 .dd-card.cansado svg{color:var(--text-faint);}
 .dd-card.desejo svg{color:var(--blue-bright);}
@@ -171,18 +186,18 @@ header .brand{color:var(--text);text-decoration:none;}
 .filtro-card{background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);
     padding:26px 24px;}
 .filtro-card.sim{border-color:rgba(79,201,255,.4);}
-.filtro-card h3{font-size:17px;font-weight:700;margin-bottom:16px;}
+.filtro-card h3{font-size:18px;font-weight:800;margin-bottom:16px;}
 .filtro-card.sim h3{color:var(--blue-bright);}
 .filtro-card.nao h3{color:var(--text-muted);}
 .filtro-list{list-style:none;padding:0;margin:0;display:grid;gap:12px;}
-.filtro-list li{display:flex;gap:10px;align-items:flex-start;font-size:14.5px;color:var(--text-muted);}
+.filtro-list li{display:flex;gap:10px;align-items:flex-start;font-size:14.5px;font-weight:500;color:var(--text-muted);}
 .filtro-list svg{width:18px;height:18px;flex:none;margin-top:1px;}
 .filtro-card.sim svg{color:var(--blue-bright);}
 .filtro-card.nao svg{color:var(--text-faint);}
 .check-grid{list-style:none;padding:0;margin:0;display:grid;gap:14px;max-width:640px;margin:0 auto;}
 .check-grid li{display:flex;gap:14px;align-items:flex-start;
     background:var(--panel);border:1px solid var(--border);border-radius:14px;
-    padding:16px 18px;font-size:15px;color:var(--text-muted);}
+    padding:16px 18px;font-size:15px;font-weight:500;color:var(--text-muted);}
 .check-grid svg{width:20px;height:20px;flex:none;margin-top:1px;color:var(--blue-bright);}
 .steps-grid{display:grid;grid-template-columns:1fr;gap:16px;}
 .step-card{background:linear-gradient(155deg, var(--panel-2), var(--panel));
@@ -193,8 +208,8 @@ header .brand{color:var(--text);text-decoration:none;}
     width:34px;height:34px;border-radius:10px;
     background:rgba(47,107,255,.14);border:1px solid var(--border-strong);
     margin-bottom:14px;}
-.step-card h3{font-size:16px;font-weight:700;margin-bottom:8px;}
-.step-card p{font-size:14.5px;color:var(--text-muted);}
+.step-card h3{font-size:18px;font-weight:800;color:var(--text-strong);margin-bottom:8px;}
+.step-card p{font-size:14.5px;font-weight:500;color:var(--text-muted);}
 .cert-hint{display:block;margin-top:18px;font-size:12.5px;color:var(--text-faint);}
 .cta-final{text-align:center;
     background:linear-gradient(155deg, var(--panel-2), var(--panel));
@@ -213,7 +228,7 @@ header .brand{color:var(--text);text-decoration:none;}
     border:1px solid var(--border);border-radius:var(--radius);
     padding:28px 24px;text-align:center;}
 .price-card.kit{border-color:var(--border-strong);}
-.price-card h3{font-size:16.5px;font-weight:700;margin-bottom:14px;}
+.price-card h3{font-size:18px;font-weight:800;color:var(--text-strong);margin-bottom:14px;}
 .price-tag{font-size:15px;color:var(--text-faint);margin-bottom:4px;line-height:1.4;}
 .price-from{display:block;font-family:"Inter";font-weight:600;font-size:15px;color:var(--blue-bright);margin-bottom:4px;letter-spacing:.01em;}
 .price-value{font-family:"Sora";font-weight:800;font-size:clamp(36px,7.3vw,46px);color:var(--blue-bright);}
@@ -243,6 +258,7 @@ header .brand{color:var(--text);text-decoration:none;}
   .brand{align-items:flex-start;}
   header .brand-dot{margin-top:5px;}
   footer .brand-dot{margin-top:8px;}
+  .footer-logo{width:165px;}
   header .wa-header-cta{display:none;}
   #monte-seu-kit .model-gallery{flex-wrap:wrap;display:grid;grid-template-columns:repeat(2,1fr);justify-items:center;gap:14px 12px;}
 }
